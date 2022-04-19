@@ -1,29 +1,76 @@
 <html>
- <body bgcolor="lightgreen">
-  <table width="100" align="center" cellpadding="20">
-    <caption><h1>Create Register Form<br>Using jQuery</h1><hr/></caption>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .bg{
+                background-color: lightgreen;
+            }
+            th{
+                color: black;
+            }
+         @media screen and (max-width: 800px){
+           .bg{
+              background-color: #fff;
+              width: 100%;
+           }
+         }
+        </style>
+    <script>
+        function register(){
+        var user = document.validate.user;  
+        var mail = document.validate.mail;
+        var pass=document.validate.pass;  
+        var cnpass=document.validate.cnpass;
+        if (user.value.length <= 0) {  
+            alert("Name is required");  
+            user.focus();  
+            return false;  
+        }  
+        if (mail.value.length <= 0) {  
+            alert("Email is required");  
+            mail.focus();  
+            return false;  
+        }  
+        if (pass.value.length <= 0) {  
+            alert("Password is required");  
+            pass.focus();  
+            return false;  
+        }  
+        if(cnpass.value.length<=0){
+           alert("password did not match")
+           cnpass.focus();
+            return false; 
+        }
+        return false;
+        }
+    </script>
+  </head>  
+ <body class="bg">
+  <table class="form-tab" width="100" align="center" cellpadding="20">
+    <caption><h1>Create Register Form</h1><hr/></caption>
+    <form name="validate" onsubmit="register()">
 	<tr>
 	  <th align="left">Name:
-	  <input type="text" size="40" placeholder="Enter Name"/></th>
+	  <input type="text" name="user" size="40" placeholder="Enter Name"/></th>
 	</tr>
 	<tr>
 	  <th align="left">Email:
-	  <input type="email" size="40" placeholder="Enter Email"/></th>
+	  <input type="email" name="mail" size="40" placeholder="Enter Email"/></th>
 	</tr>
 	<tr>
 	  <th align="left">Password:
-	  <input type="password" size="40" placeholder="Enter Password"/></th>
+	  <input type="password" name="pass" size="40" placeholder="Enter Password"/></th>
 	</tr>
 	<tr>
 	  <th align="left">Confirm Password:
-	  <input type="password" size="40"/></th>
+	  <input type="password" name="cnpass" size="40" placeholder="Enter confirm password"/></th>
 	</tr>
 	<tr>
 	 <th>
-	   <button type="submit" style="background-color:blue;width:270px;height:40px"><font color="lightgreen">Register</font></button>
+	   <button type="submit" value="Submit" style="background-color:blue;width:270px;height:40px"><font color="white">Register</font></button>
 	 </th>
 	</tr>
+    </form>
   </table>
- 
  </body>
 </html>
