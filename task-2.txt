@@ -1,2 +1,1 @@
-Task for today for submit at 12.30
-Task for this day is to create form with validation
+<?php include-once("form.html")?>
